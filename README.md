@@ -1,2 +1,0 @@
-# Viking
-Viking

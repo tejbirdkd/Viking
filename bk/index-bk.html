@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <meta property="og:title" content="" />
+  <meta property="og:image" content="img/logo.png" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="Website" />
+  <meta property="og:description" content="D" />
+<link rel="canonical" href="" />
+
+    <!-- Bootstrap CSS -->
+    <link href="img/favicon.png" rel="icon">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href=" https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+<style>
+ .form-group label {
+
+    color: #7d7d7d;
+}
+h1.margin-ten.no-margin-bottom {
+    font-size: 26px;
+    margin: 30px 0px 0;
+}
+
+.form-control::placeholder {
+    color: #bababa;
+    font-size: 14px!important;
+}
+.table-a
+{
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 51px;
+    left: 51px;
+    background: #fff;
+}
+
+
+table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+    width: 100%;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- PreLoader -->
+    <!-- <div id="preloader">
+        <div id="status" class="loading-page">
+            <img src="img/logo-horizontal.png" class="load-logo">
+        </div>
+    </div> -->
+    <!--Preloader-->
+
+    <!--Navbar start-->
+    <!-- <nav class="autohide navbar navbar-expand-lg navbar-light"> -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+            <!-- <a class="navbar-brand" href="index.html">
+                <img src="img/vm-logo.png" class="logo" alt="">
+            </a> -->
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+    </div>
+</nav>
+
+    <!--Navbar end-->
+
+    <section class="no-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 about-restaurant-img cover-background" style="background-image:url('img/tower.JPG');">
+                    <img class="table-a" src="img/form-a.png" style="margin: 0 auto;">
+                    <div class="img-border"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 about-restaurant-text text-center">
+                    <img src="img/vm-logo.png" alt="" style="width: 120px;">
+                    <h1 class="margin-ten no-margin-bottom">TIA-222-I MAINTENANCE AND CONDITION ASSESSMENT REPORT</h1>
+                    <form class="mt-4 row" name="contact_form" id="a" method="post" novalidate="novalidate">
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="inspection_date" class="form-label">Inspection Date</label>
+                            <input type="date" class="form-control tbs-input border" id="inspection_date" name="inspection_date" min="2025-03-06" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="inspector_name" class="form-label">Inspector Name</label>
+                            <input type="text" class="form-control tbs-input border" id="inspector_name" name="inspector_name" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="inspection_company" class="form-label">Inspection Company</label>
+                            <input type="text" class="form-control tbs-input border" id="inspection_company" name="inspection_company" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="client_name" class="form-label">Client Name</label>
+                            <input type="text" class="form-control tbs-input border" id="client_name" name="client_name" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="tower_owner" class="form-label">Tower Owner</label>
+                            <input type="text" class="form-control tbs-input border" id="tower_owner" name="tower_owner" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="tower_location" class="form-label">Tower Location</label>
+                            <input type="text" class="form-control tbs-input border" id="tower_location" name="tower_location" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="tower_id" class="form-label">Tower ID/Name</label>
+                            <input type="text" class="form-control tbs-input border" id="tower_id" name="tower_id" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6">
+                            <label for="tower_type" class="form-label">Tower Type</label>
+                            <select class="form-select" id="tower_type" name="tower_type" required>
+                                <option>Select Tower Type</option>
+                                <option value="1">Guyed</option>
+                                <option value="2">Self-Supporting</option>
+                                <option value="3">Monopole</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="tower_height" class="form-label">Tower Height</label>
+                            <input type="text" class="form-control tbs-input border" id="tower_height" name="tower_height" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-6 position-relative">
+                            <label for="year_of_construction" class="form-label">Year of Construction</label>
+                            <input type="text" class="form-control tbs-input border" id="year_of_construction" name="year_of_construction" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-12">
+                            <label for="tower_photo" class="form-label">Photo of Tower</label>
+                            <input type="file" class="form-control" id="tower_photo" name="tower_photo" required>
+                        </div>
+
+
+                        <div class="form-group mb-3 col-sm-12">
+                        <table>
+                            <tr>
+                                <th colspan="2">Structural</th>
+                                <th colspan="2">Maintenance</th>
+                            </tr>
+                            <tr>
+                                <th>Critical</th>
+                                <th>Non-Critical</th>
+                                <th>Critical</th>
+                                <th>Non-Critical</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="YES"></td>
+                                <td><input type="text" value="YES"></td>
+                                <td><input type="text" value="YES"></td>
+                                <td><input type="text" value="YES"></td>
+                            </tr>
+                        </table>
+                        </div>
+
+                        <span id="msg_contact" style="color:red"></span><br>
+                        <button type="submit" class="btn btn-site" id="submit_button">Submit</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="section-white">
+        <div class="container">
+            <div class="pb-4">
+                <h1 class="heading mb-5 summer-calling-font"> <span class=""> Our Menus </span> </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="menu.html#asian-cuisine" class="menu-box">
+                    <img src="img/posters/6.jpg" class="w-100">
+                    <img src="img/menu-hover.png" class="palta">
+                        </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="menu.html#indian-fusion" class="menu-box">
+                    <img src="img/posters/7.jpg" class="w-100">
+                    <img src="img/menu-hover.png" class="palta">
+                        </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="menu.html#blissful-baverages" class="menu-box">
+                    <img src="img/menu-s.jpg" class="w-100">
+                    <img src="img/menu-hover.png" class="palta">
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-white p-0" style="background: #006b9e;">
+        <div class="">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="img/abt.png" class="w-100" style="position: sticky;top: 0px;">
+                </div>
+                <div class="col-md-6">
+                    <img src="img/logo-trs2.png" style="width: 200px;margin: -45px auto 0px auto;display: block;">
+                    <div class="px-5 py-4 mt-4">
+                        <div class="pb-4">
+                            <h1 class="heading mb-0 text-white summer-calling-font"> <span class=""> About Us </span> </h1>
+                        </div>
+                        <h3 class="h5 caption text-left text-white my-4 fw-light">By revolutionizing the way kitchens work, The Binge Story caters to your whims and fancies with such ease, quality and transparency. </h3>
+                        <h3 class="h5 caption text-left text-white my-4 fw-light">We believe that dining with choices is the new and improved way to dine. What’s better? You are spoilt sitting in the comfort of your home.  </h3>
+                        <h3 class="h5 caption text-left text-white my-4 fw-light">The food is prepared in fully functional and hygienic kitchens. Out mission is to provide a gourmet approach with premium quality ingredients. </h3>
+                        <h3 class="h5 caption text-left text-white my-4 fw-light">So you get great food, with great quality without wasting any of your time! </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="section-white position-relative" style="background-image: url(img/pattern/1.png);background-size: 60%;">
+        <!-- <img src="img/illustrations/1.png" style="position: absolute;width: 300px;filter: drop-shadow(2px 4px 0px black);top: 25%;left: -20px;transform: rotateY(180deg);">
+        <img src="img/illustrations/2.png" style="position: absolute;width: 300px;top: 15%;right: 25px;">
+        <img src="img/illustrations/5.png" style="position: absolute;width: 300px;filter: drop-shadow(2px 4px 0px black);top: 65%;right: 25px;">
+        <img src="img/illustrations/4.png" style="position: absolute;width: 300px;top: 70%;left: 5%;"> -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 position-relative">
+                    <img src="img/posters/5.png" class="w-100" id="js-hero" style="position: sticky;top: 0px;z-index: 0;background: #fff;">
+                    <div class="" style="position: absolute;top: 0;bottom: 0;display: grid;place-content: center;padding: 10px 60px;text-align: center;">
+                        <div class="pb-4">
+                            <h1 class="heading mb-0 summer-calling-font text-site-color"> <span class=""> The Binge Story </span> </h1>
+                        </div>
+                        <h3 class="h6 caption text-left mt-4 fw-light">The entire brand is made on the message of being transparent, honest and without a single compromise on quality. </h3>
+                       <h3 class="h6 caption text-left  mt-2 fw-bold" style="color: #e65225;">Let's Binge Together! </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="">
+        <div class="section-white">
+            <div class="container">
+                <div class="pb-5 text-center">
+                    <h1 class="heading mb-0 summer-calling-font text-site-color"> <span class=""> Gallery </span> </h1>
+                </div>
+                <div class="mt-4">
+                    <ul class="row p-0" id="lightgallery">
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/1.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/1.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/2.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/2.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/3.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/3.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/4.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/4.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/5.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/5.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/6.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/6.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/7.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/7.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-6 list-unstyled" data-src="img/photography/8.jpg">
+                            <div class="grid">
+                                <figure class="effect-marley">
+                                    <img class="img-fluid" src="img/photography/8.jpg">
+                                    <figcaption>
+                                        <p> <a class="font-14 font-weight-bold text-capitalize text-white"><i class="fas fa-expand font-2rem"></i></a></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-12 text-center mt-4">
+                <a href="gallery.html" class="btn btn-site">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row g-0">
+        <div class="col-md-5 d-flex">
+            <div class="instagram-box w-100">
+                <div class="pb-5">
+                    <h1 class="heading mb-0 summer-calling-font"> <span class=""> Instagram </span> </h1>
+                </div>
+                <h4 class="my-4">@thebingestory</h4>
+                <a href="https://www.instagram.com/thebingestory/" target="_blank" class="btn btn-site"><i class="fas fa-plus"></i> FOLLOW</a>
+            </div>
+        </div>
+
+        <div class="col-md-7 py-4 px-4" style="background: #e8f8ff;">
+            <div class="mt-0">
+                <div class="row">
+                    <div class="col-md-3 col-6 mb-1  grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/1.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/2.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/3.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/4.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/5.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/6.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/7.png">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-3 col-6  mb-1 grid">
+                        <figure class="effect-marley mb-0">
+                            <img class="img-fluid" src="insta/8.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="py-5 position-relative" style="background-color: #036b9d!important;overflow: hidden;">
+    <img src="img/footer-dot.png" style="position: absolute;bottom: 0;left: 0;">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <a href="index.html"><img src="img/logo.png" style="width: 150px;"></a>
+                    <ul class="list-unstyled mt-4" style="font-family: 'Raleway';font-size: 14px;">
+                        <li class="mb-2 text-light"> Premium, hygienic and attentively prepared - you can think of us as culinary enthusiasts who deliver gourmet dining experiences at your doorstep.</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-8 text-center mt-4 pt-4 border-top">
+
+                    <ul class="list-unstyled d-flex mx-auto justify-content-center mb-0">
+                        <li class="mx-2"><a href="https://thebingestory.com/" class="footer-link">Home</a></li>
+                        <li class="mx-2"><a href="about-us.html" class="footer-link">About Us</a></li>
+                        <li class="mx-2"><a href="blogs.html" class="footer-link">Blogs</a></li>
+                        <li class="mx-2"><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li class="mx-2"><a href="terms-and-conditions.html" class="footer-link">Term & Condition</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 text-center">
+
+                    <ul class="list-unstyled mb-0 mt-4">
+                        <div>
+                            <a href="https://www.facebook.com/TheBingeStory" target="_blank" class="pr-2 font-1rem"><i class="fab social-icon fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/thebingestory/" target="_blank" class="pr-2 font-1rem"><i class="fab social-icon fa-instagram"></i></a>
+                            <!-- <a href="" target="_blank" class="pr-2 font-1rem"><i class="fab social-icon fa-twitter"></i></a> -->
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popper and Bootstrap JS -->
+    <!--important for bootstrap 4 slider-->
+    <script src='https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js'></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <!-- app js -->
+    <!--    <script src='js/app.js'></script>-->
+
+
+    <!--important for bootstrap 4 carasoul slider-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <script src="js/owl.carousel.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var owl = $('.owl-carousel-testimonial');
+            owl.owlCarousel({
+                margin: 20,
+                loop: true,
+                navRewind: true,
+                nav: true,
+                autoplay: true,
+                autoplayHoverPause: true,
+                navText: [
+                    "<i class='fas fa-arrow-left'></i>",
+                    "<i class='fas fas fa-arrow-right'></i>"
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            })
+        });
+    </script>
+
+    <!--header-top-fixed start-->
+    <script>
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 50) {
+                $('.navbar-fixed').addClass('navbar-fixed-top shadow-sm');
+            } else {
+                $('.navbar-fixed').removeClass('navbar-fixed-top shadow-sm');
+            }
+
+        });
+    </script>
+    <!--header-top-fixed End-->
+
+    <script>
+        $("#register-btn").click(function() {
+            $(".login-content").hide();
+            $(".signup-content").show();
+            $(".forgot-content").hide();
+        });
+
+        $("#forgot-btn").click(function() {
+            $(".forgot-content").show();
+            $(".login-content").hide();
+            $(".signup-content").hide();
+        });
+
+        $("#login-btn").click(function() {
+            $(".login-content").show();
+            $(".signup-content").hide();
+            $(".forgot-content").hide();
+        });
+    </script>
+    <script type="text/javascript">
+        $(".quickbuy").click(function() {
+            $(".quickbuyform").toggle();
+        });
+    </script>
+
+    <script>
+        // header-top-fixed Start
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 54) {
+                $(".navbar-light").addClass("shadow");
+            } else {
+                $(".navbar-light").removeClass("shadow");
+            }
+        });
+
+        // header-top-fixed End
+    </script>
+    <script>
+        $(window).on("load", function() {
+            $("#status").delay(1500).fadeOut("slow");
+            $("#preloader").delay(1500).fadeOut("slow");
+            $("body").delay(1500).css({
+                overflow: "visible",
+            });
+        });
+    </script>
+    <script>
+        lightGallery(document.getElementById('lightgallery'))
+    </script>
+</body>
+
+</html>

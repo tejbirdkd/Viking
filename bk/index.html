@@ -1,0 +1,1754 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="img/faviconxx.png" rel="icon">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css?v-33855565" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+    .row.mb-3 {
+    position: inherit;
+}
+.error{
+    color:red! important;
+}
+.mb-3 {
+    position: relative;
+    margin-bottom: 28px !important;
+}
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #332f2f;
+    text-transform: capitalize;
+}
+th {
+    background-color: #fff;
+    text-transform: capitalize;
+}
+input[type="text"] {
+    width: 100%;
+}
+
+
+
+    fieldset {
+    min-width: 0;
+    padding: revert;
+    margin: inherit;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 35px;
+}
+
+legend {
+    float: inherit;
+    width: initial;
+    padding: 0 5px;
+    margin-bottom: .5rem;
+    font-size: 20px;
+}
+
+
+
+
+
+.section-4  th, .section-4  td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .section-4 th {
+            background-color: #7a7a7a;
+            color: white;
+            text-align: center;
+        }
+        .header {
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+            background-color: #7a7a7a;
+            color: white;
+            padding: 10px;
+        }
+        .add-row {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #7a7a7a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .remove-row {
+            padding: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+textarea {
+    resize: vertical;
+    width: 100%;
+}
+@media (max-width:768px) {
+    .table-responsive input.form-control{
+        width: 150px;
+    }
+
+    .table-responsive select {
+        width: 150px;
+    }
+    input#inspection_date {
+    width: 100%;
+}
+input#tower_photo {
+    width: 100%;
+}
+
+}
+</style>
+
+<body class="dark">
+
+
+    <!-- PreLoader -->
+    <div id="preloader">
+        <div id="status" class="loading-page">
+            <img src="img/viking.png" class="load-logo">
+        </div>
+    </div>
+       <!--Preloader-->
+
+    <!--Navbar start-->
+    <!-- <nav class="autohide navbar navbar-expand-lg navbar-light"> -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/viking.png" class="logo" alt="">
+            </a>
+
+        </div>
+        <div class="modess">
+            <div class="mode"> <div> Dark Mode </div> </div>
+        </div>
+    </nav>
+
+    <!--Navbar end-->
+
+
+    <div class="section-bnr inner-banner">
+        <img src="img/line-pattern.png" style="position: absolute;top: 0;z-index: 0;width: 100%;">
+        <!--<img src="img/svg/illu-gabel.svg" style="position: absolute;width: 200px;top: 24%;left: 20px;">
+        <img src="img/svg/illu-getraenk.svg" style="position: absolute;width: 200px;top: 22%;right: 0px;">-->
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="s-heading text-center">
+                        <p class="">TIA-222-I MAINTENANCE AND CONDITION ASSESSMENT REPORT </p>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-5 mb-5 position-relative" style="z-index: 9;">
+        <div class="container" style="margin-top: -65px;">
+             <div class="row g-0 mt-4">
+
+             <div class="col-lg-6 d-md-block d-none">
+             <img src="img/tower.JPG" class="shadow" style="width: 100%;height: 100%; object-fit: cover;">
+           </div>
+           <div class="col-lg-6 d-flex">
+            <div class="p-4 py-md-2 px-md-4 shadow w-100 bg-w">
+
+              <form class="mt-4 row" name="contact_form" id="a" method="post" novalidate="novalidate">
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="inspection_date" class="form-label">Inspection Date</label>
+                   <input type="date" class="form-control tbs-input border" id="inspection_date" name="inspection_date" min="2025-03-06" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="inspector_name" class="form-label">Inspector Name</label>
+                   <input type="text" class="form-control tbs-input border" id="inspector_name" name="inspector_name" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="inspection_company" class="form-label">Inspection Company</label>
+                   <input type="text" class="form-control tbs-input border" id="inspection_company" name="inspection_company" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="client_name" class="form-label">Client Name</label>
+                   <input type="text" class="form-control tbs-input border" id="client_name" name="client_name" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="tower_owner" class="form-label">Tower Owner</label>
+                   <input type="text" class="form-control tbs-input border" id="tower_owner" name="tower_owner" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="tower_location" class="form-label">Tower Location</label>
+                   <input type="text" class="form-control tbs-input border" id="tower_location" name="tower_location" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="tower_id" class="form-label">Tower ID/Name</label>
+                   <input type="text" class="form-control tbs-input border" id="tower_id" name="tower_id" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6">
+                   <label for="tower_type" class="form-label">Tower Type</label>
+                   <select class="form-select" id="tower_type" name="tower_type" required>
+                       <option>Select Tower Type</option>
+                       <option value="1">Guyed</option>
+                       <option value="2">Self-Supporting</option>
+                       <option value="3">Monopole</option>
+                   </select>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="tower_height" class="form-label">Tower Height</label>
+                   <input type="text" class="form-control tbs-input border" id="tower_height" name="tower_height" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-6 position-relative">
+                   <label for="year_of_construction" class="form-label">Year of Construction</label>
+                   <input type="text" class="form-control tbs-input border" id="year_of_construction" name="year_of_construction" required>
+               </div>
+
+               <div class="form-group mb-3 col-sm-12">
+                   <label for="tower_photo" class="form-label">Photo of Tower</label>
+                   <input type="file" class="form-control" id="tower_photo" name="tower_photo" required>
+               </div>
+
+
+               <div class="form-group mb-3 col-sm-12">
+               <table>
+                   <tr>
+                       <th colspan="2"><b>Structural</b></th>
+                       <th colspan="2"><b>Maintenance</b></th>
+                   </tr>
+                   <tr>
+                       <th>Critical</th>
+                       <th>Non-Critical</th>
+                       <th>Critical</th>
+                       <th>Non-Critical</th>
+                   </tr>
+                   <tr>
+                       <td><input class="form-control tbs-input border" type="text" value="" placeholder="YES"></td>
+                       <td><input class="form-control tbs-input border" type="text" value="" placeholder="YES"></td>
+                       <td><input class="form-control tbs-input border" type="text" value="" placeholder="YES"></td>
+                       <td><input class="form-control tbs-input border" type="text" value="" placeholder="YES"></td>
+                   </tr>
+               </table>
+               </div>
+
+           </form>
+            </div>
+          </div>
+         </div>
+         </div>
+     </div>
+
+     <div class="section-white abt-us p-0">
+        <div class="">
+            <div class="row g-0">
+                <div class="col-md-10 mx-auto text-center">
+                     <div class="px-5 py-4 mt-4">
+                        <div class="pb-4">
+                            <h1 class="heading mb-0"> <span class="">Introduction</span> </h1>
+                        </div>
+                       <p>The above-noted tower was inspected following the general guidelines set forth by the <b>TIA-222-I Annex J: Tower Maintenance and Inspection Procedures</b>. Standard industry and manufacturer specifications were also observed during this assessment. A tower climb was completed by Viking Maintenance personnel and a visual inspection of the installation was performed from this vantage point. It should be noted that most observations are based on a visual inspection conducted during the tower climb. It was not within the scope of this work to physically check or closely observe every member, bolt, connection, or similar component.</p>
+                       <p>Both the procedures of the inspection and the preparation of this report were carried out per the requirements of Annex J: Maintenance and Condition Assessment Procedures of the TIA-222-I standard. The standard recommends routine inspections of self-support towers at intervals not exceeding three years, with shorter intervals advised for Class III (Public Safety) Structures or after severe wind, ice storms, or other extreme conditions. Contained herein are the findings and recommendations resulting from the inspection.</p>
+
+                       <h3>Limitations and Exceptions</h3>
+                       <p>Subsurface components were not excavated or otherwise assessed during this inspection.</p>
+        <p>The findings and recommendations in this report should not be interpreted as verification of the compliance of the structure, its components, or attachments with any governmental, industry, or other standards.</p>
+        <p>This report does not offer any guarantees, either explicit or implied, regarding the current or future performance, capacity, or structural integrity of the tower or its components.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="section-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="heading mb-0">Non Compliant maintenance and structural issues.</h2>
+                <form action="#">
+                    <fieldset>
+                     <legend>Maintenance issues (Critical)</legend>
+                     <p>Priority</p>
+                     <div class="row">
+
+                        <div class="form-group mb-3 col-sm-4 position-relative">
+                            <label for="tower_height" class="form-label">Observation</label>
+                            <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="form-group mb-3 col-sm-4 position-relative">
+                            <label for="tower_height" class="form-label">Recommendation</label>
+                            <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-4 position-relative">
+                            <label for="tower_height" class="form-label">Upload Image</label>
+                            <div class="col-ting">
+                                <div class="control-group file-upload" id="file-upload1">
+                                  <div class="image-box text-center">
+                                        <p>Upload image </p>
+                                        <img src="" alt="">
+                                    </div>
+                                  <div class="controls" style="display: none;">
+                                        <input type="file" name="contact_image_1"/>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                     </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Maintenance issues (Non-Critical)</legend>
+                        <p>Priority</p>
+                        <div class="row">
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Observation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Recommendation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Upload Image</label>
+                               <div class="col-ting">
+                                   <div class="control-group file-upload" id="file-upload1">
+                                     <div class="image-box text-center">
+                                           <p>Upload image </p>
+                                           <img src="" alt="">
+                                       </div>
+                                     <div class="controls" style="display: none;">
+                                           <input type="file" name="contact_image_1"/>
+                                       </div>
+                                   </div>
+                                   </div>
+                           </div>
+                        </div>
+
+                       </fieldset>
+
+
+
+
+                       <fieldset>
+                        <legend>Structural issues (Critical)</legend>
+                        <p>Priority</p>
+                        <div class="row">
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Observation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Recommendation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Upload Image</label>
+                               <div class="col-ting">
+                                   <div class="control-group file-upload" id="file-upload1">
+                                     <div class="image-box text-center">
+                                           <p>Upload image </p>
+                                           <img src="" alt="">
+                                       </div>
+                                     <div class="controls" style="display: none;">
+                                           <input type="file" name="contact_image_1"/>
+                                       </div>
+                                   </div>
+                                   </div>
+                           </div>
+                        </div>
+
+                       </fieldset>
+
+
+
+                       <fieldset>
+                        <legend>Structural issues (Non Critical)</legend>
+                        <p>Priority</p>
+                        <div class="row">
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Observation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Recommendation</label>
+                               <textarea id="" class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                           </div>
+
+                           <div class="form-group mb-3 col-sm-4 position-relative">
+                               <label for="tower_height" class="form-label">Upload Image</label>
+                               <div class="col-ting">
+                                   <div class="control-group file-upload" id="file-upload1">
+                                     <div class="image-box text-center">
+                                           <p>Upload image </p>
+                                           <img src="" alt="">
+                                       </div>
+                                     <div class="controls" style="display: none;">
+                                           <input type="file" name="contact_image_1"/>
+                                       </div>
+                                   </div>
+                                   </div>
+                           </div>
+                        </div>
+
+                       </fieldset>
+
+<!-- <div class="col-sm-8 mx-auto text-center pt-5 pb-5">
+                       <h2 class="heading mb-0">Maintenance Issues - Tower (Maintenance)</h2>
+                       <p>The following issues identified are considered lower priority deviantions that do not required immediate attention but should be considered as part of future tower maintenance activities</p>
+</div> -->
+
+
+<div class="header" style="margin-top: 30px;">Maintenance Issues - Tower (MAINTENANCE)</div>
+    <p>The following issues identified are considered lower priority deviations that do not require immediate attention but should be considered as part of future tower maintenance activities.</p>
+<div class="table-responsive">
+    <table>
+        <tr>
+            <th>Category & Item Description</th>
+            <th>Non-Compliant Item & Recommendation</th>
+            <th>Photo</th>
+        </tr>
+        <tr>
+            <td>
+               <p>2.2.1 Guy Anchors Vegetation</p>
+            </td>
+            <td>
+                <textarea class="form-control" rows="4" placeholder="The guy anchor areas are overgrown with vegetation. Recommend vegetation be removed, ground scrubbed, weed barrier applied, and 4”-6” of rock added around the anchors."></textarea>
+            </td>
+            <td>
+                <input type="file">
+                <input type="file">
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <p>2.2.2 Construction Materials</p>
+            </td>
+            <td>
+                <textarea class="form-control" rows="4" placeholder="Construction materials are present on a field access path and in the corner of the compound. Recommend materials be removed or consolidated within the compound fencing."></textarea>
+            </td>
+            <td>
+                <input type="file">
+                <input type="file">
+            </td>
+        </tr>
+    </table>
+</div>
+
+                   </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="heading mb-5 text-center">Deficiency Schedule</h2>
+
+                <div class="table-responsive">
+                <table id="deficiencyTable">
+                    <tr>
+                        <th>Deficiency</th>
+                        <th>Elevation (ft)</th>
+                        <th>Location</th>
+                        <th>Notes</th>
+                        <th>Category</th>
+                        <th>Upload Image</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" value="Missing Locking Devices"></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td>
+                            <select class="form-select">
+                                <option>Select Category</option>
+                                <option value="1">Maintenance issues (Critical)</option>
+                                <option value="2">Maintenance issues (Non-Critical)</option>
+                                <option value="3">Structural issues (Critical)</option>
+                                <option value="4">Structural issues (Non Critical)</option>
+                            </select>
+                        </td>
+                        <td><input type="file" class="form-control"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" value="Missing Locking Devices"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>
+                            <select class="form-select">
+                                <option>Select Category</option>
+                                <option value="1">Maintenance issues (Critical)</option>
+                                <option value="2">Maintenance issues (Non-Critical)</option>
+                                <option value="3">Structural issues (Critical)</option>
+                                <option value="4">Structural issues (Non Critical)</option>
+                            </select>
+                        </td>
+                        <td><input type="file" class="form-control"></td>
+                        <td><button class="remove-row" onclick="this.parentElement.parentElement.remove()">Remove</button></td>
+                    </tr>
+                </table>
+                </div>
+                <button class="add-row" onclick="addRow()">+ Add Row</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="section-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="heading mb-5 text-center">TIA-222-h Annex J condition checklist </h2>
+
+              <!-- Section I: Site Conditions -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-header">
+                        <th class="font-sd" colspan="3" style="font-weight: 500;">I. SITE CONDITIONS (Ground level)</th>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Inspection Item</th>
+                        <th>Condition</th>
+                        <th>Item Number / Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> <th colspan="3" style="text-align: left;">A. Site Access Road</th></tr>
+                    <tr>
+
+
+                        <td>Gate / Lock </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>Aggregate / Weed Barrier</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Settlement / Drainage
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr> <th colspan="3" style="text-align: left;">B. Compound</th></tr>
+                    <tr>
+
+
+                        <td>Aggregate / Weed Barrier </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>Settlement / Drainage</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Owner / Client Assets
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>Owner/Client Grounding
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section II: Guyed Anchor Compounds -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-header">
+                        <th class="font-sd" colspan="3" style="font-weight: 500;">II. GUYED ANCHOR COMPOUNDS</th>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Inspection Item</th>
+                        <th>Condition</th>
+                        <th>Item Number / Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr> <th colspan="3" style="text-align: left;">A. Guy Anchors</th></tr>
+                    <tr>
+
+
+                        <td>Aggregate / Weed Barrier</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr>
+
+
+                        <td>Settlement / Drainage</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Anchor Rod(s)
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Corrosion Control Installation</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Grounding</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+
+                    <tr> <th colspan="3" style="text-align: left;">B. Guy Wires
+                    </th></tr>
+                    <tr>
+
+
+                        <td>Finish</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+                    <tr>
+
+
+                        <td>Cable Thimbles
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Turnbuckles
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Cable Connectors
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Shackles, bolts, pins, cotter pins
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section III: Structure Conditions -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-header">
+                        <th class="font-sd" colspan="3">III. STRUCTURE CONDITIONS</th>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Inspection Item</th>
+                        <th>Condition</th>
+                        <th>Item Number / Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr> <th colspan="3" style="text-align: left;">A. Tower Base Foundation</th></tr>
+                    <tr>
+
+
+                        <td>Base Condition
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Grouting Condition
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Concrete Condition
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Anchor Bolts
+
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Leveling Nuts
+
+
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+                    <tr> <th colspan="3" style="text-align: left;">B. Grounding
+                    </th></tr>
+                    <tr>
+
+
+                        <td>Connections
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Ground Lead(s) Condition
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Lightning Rod
+
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+
+                    <tr> <th colspan="3" style="text-align: left;">C. Members
+
+                    </th></tr>
+                    <tr>
+
+
+                        <td>Bent, Loose, Missing, Etc
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Loose and/or missing bolts
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Tower Legs
+
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+
+                    <tr> <th colspan="3" style="text-align: left;">D. Finish
+
+                    </th></tr>
+                    <tr>
+
+
+                        <td>Paint and/or galvanizing condition
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Rust and/or corrosion conditions
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td>Water collection in members
+
+
+
+
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected disabled>Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                        <td>Item 1</td>
+                    </tr>
+
+
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="heading mb-5 text-center">Coaxial Layout</h2>
+
+
+                <div class="form-group mb-3 col-sm-12 position-relative">
+                    <label for="tower_height" class="form-label">Upload Image</label>
+                    <div class="col-ting">
+                        <div class="control-group file-upload" id="file-upload1">
+                          <div class="image-box text-center">
+                                <p>Upload image </p>
+                                <img src="" alt="">
+                            </div>
+                          <div class="controls" style="display: none;">
+                                <input type="file" name="contact_image_1"/>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="heading mb-5 text-center">Anchor Guard System </h2>
+                <form>
+                    <!-- Test Date and Test Performed By -->
+                    <div class="row mb-3">
+                        <div class="form-group mb-3 col-sm-3 position-relative">
+                            <label for="inspection_date" class="form-label">Test Date:</label>
+                            <input type="date" class="form-control tbs-input border" id="" name="" min="2025-03-06" required>
+                        </div>
+
+                        <div class="form-group mb-3 col-sm-3 position-relative">
+                            <label for="inspection_date" class="form-label">Test Performed By</label>
+                            <input type="text" class="form-control tbs-input border">
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group position-relative mb-2">
+                            <label class="form-label">Anode Condition</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="anodeCondition" id="anodeAcceptable" value="Acceptable">
+                                <label class="form-check-label" for="anodeAcceptable">Acceptable</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="anodeCondition" id="anodeNeedsReplacement" value="Needs Replacement">
+                                <label class="form-check-label" for="anodeNeedsReplacement">Needs Replacement</label>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group position-relative mb-2">
+                            <label class="form-label">Protective Coating Integrity</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="coatingIntegrity" id="coatingSatisfactory" value="Satisfactory">
+                                <label class="form-check-label" for="coatingSatisfactory">Satisfactory</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="coatingIntegrity" id="coatingDeteriorated" value="Deteriorated">
+                                <label class="form-check-label" for="coatingDeteriorated">Deteriorated</label>
+                            </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                    <!-- DC Voltage Readings -->
+                    <h5 class="mb-3">DC Voltage Readings (mV) on test points C TO G</h5>
+                    <table class="table table-bordered mb-4">
+                        <thead>
+                            <tr>
+                                <th>Anchor</th>
+                                <th>Measurement (mV)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Anchor 1</td>
+                                <td><input type="text" class="form-control" name="measurementAnchor1" placeholder="Enter measurement"></td>
+                            </tr>
+                            <tr>
+                                <td>Anchor 2</td>
+                                <td><input type="text" class="form-control" name="measurementAnchor2" placeholder="Enter measurement"></td>
+                            </tr>
+                            <tr>
+                                <td>Anchor 3</td>
+                                <td><input type="text" class="form-control" name="measurementAnchor3" placeholder="Enter measurement"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Observations -->
+                    <div class="row mb-3">
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="observations" class="form-label">Observations</label>
+                            <textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Enter observations"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="systemPerformance" class="form-label">Notes on system performance</label>
+                            <textarea class="form-control" id="systemPerformance" name="systemPerformance" rows="3" placeholder="Enter notes"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="degradationSigns" class="form-label">Signs of degradation or failure</label>
+                            <textarea class="form-control" id="degradationSigns" name="degradationSigns" rows="3" placeholder="Enter signs observed"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="conclusions" class="form-label">Conclusions and Recommendations</label>
+                            <textarea class="form-control" id="conclusions" name="conclusions" rows="3" placeholder="Enter conclusions and recommendations"></textarea>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="summary" class="form-label">Summary of findings</label>
+                            <textarea class="form-control" id="summary" name="summary" rows="3" placeholder="Enter summary"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-3">
+                            <div class="form-group position-relative">
+                            <label for="correctiveActions" class="form-label">Corrective actions required</label>
+                            <textarea class="form-control" id="correctiveActions" name="correctiveActions" rows="3" placeholder="Enter corrective actions"></textarea>
+                                </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-9">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+<div class="bg-w">
+        <!-- Tension, Plumb and Twist Report -->
+        <h2 class="heading mb-5 text-center">Tension, Plumb and Twist Report</h2>
+
+        <form>
+            <!-- Site Information -->
+            <div class="row mb-4">
+
+                    <div class="mb-3 col-md-4">
+                        <label for="siteName" class="form-label">SITE NAME</label>
+                        <input type="text" class="form-control" id="siteName" placeholder="Enter site name">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="siteId" class="form-label">SITE ID</label>
+                        <input type="text" class="form-control" id="siteId" placeholder="Enter site ID">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="customer" class="form-label">CUSTOMER</label>
+                        <input type="text" class="form-control" id="customer" placeholder="Enter customer name">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="siteAddress" class="form-label">SITE ADDRESS</label>
+                        <input type="text" class="form-control" id="siteAddress" placeholder="Enter site address">
+                    </div>
+
+                    <div class="mb-3 col-md-4">
+                        <label for="dateCompleted" class="form-label">DATE COMPLETED</label>
+                        <input type="date" class="form-control" id="dateCompleted" style="height: 47px;">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="temperature" class="form-label">TEMPERATURE</label>
+                        <input type="text" class="form-control" id="temperature" placeholder="Enter temperature">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="windSpeed" class="form-label">WIND SPEED</label>
+                        <input type="text" class="form-control" id="windSpeed" placeholder="Enter wind speed">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="windDirection" class="form-label">WIND DIRECTION</label>
+                        <input type="text" class="form-control" id="windDirection" placeholder="Enter wind direction">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="completedBy" class="form-label">COMPLETED BY</label>
+                        <input type="text" class="form-control" id="completedBy" placeholder="Enter name">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anchor A Table -->
+            <h3 class="mt-4">Anchor A</h3>
+            <div class="table-responsive mb-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>GUY LEVEL</th>
+                            <th>GUY ELEV (ft)</th>
+                            <th>WIRE SIZE (in)</th>
+                            <th>ANCHOR DISTANCE</th>
+                            <th>TYPE-STRAND</th>
+                            <th>INITIAL TENSION</th>
+                            <th>DESIRED TENSION</th>
+                            <th>MEASURED TENSION</th>
+                            <th>GUY STAR (L/R)</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 10 rows for Anchor A -->
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <!-- Repeat up to GUY LEVEL 10 -->
+                        <!-- For brevity, only 2 rows are shown; add 8 more rows similarly -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Anchor B Table -->
+            <h3 class="mt-4">Anchor B</h3>
+            <div class="table-responsive mb-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>GUY LEVEL</th>
+                            <th>GUY ELEV (ft)</th>
+                            <th>WIRE SIZE (in)</th>
+                            <th>ANCHOR DISTANCE</th>
+                            <th>TYPE-STRAND</th>
+                            <th>INITIAL TENSION</th>
+                            <th>DESIRED TENSION</th>
+                            <th>MEASURED TENSION</th>
+                            <th>GUY STAR (L/R)</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 10 rows for Anchor B -->
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <!-- Repeat up to GUY LEVEL 10 -->
+                        <!-- For brevity, only 2 rows are shown; add 8 more rows similarly -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Anchor C Table -->
+            <h3 class="mt-4">Anchor C</h3>
+            <div class="table-responsive mb-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>GUY LEVEL</th>
+                            <th>GUY ELEV (ft)</th>
+                            <th>WIRE SIZE (in)</th>
+                            <th>ANCHOR DISTANCE</th>
+                            <th>TYPE-STRAND</th>
+                            <th>INITIAL TENSION</th>
+                            <th>DESIRED TENSION</th>
+                            <th>MEASURED TENSION</th>
+                            <th>GUY STAR (L/R)</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 8 rows for Anchor C -->
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" class="form-control" placeholder="Elevation"></td>
+                            <td><input type="text" class="form-control" placeholder="Size"></td>
+                            <td><input type="text" class="form-control" placeholder="Distance"></td>
+                            <td><input type="text" class="form-control" value="EHS" disabled></td>
+                            <td><input type="text" class="form-control" placeholder="Initial"></td>
+                            <td><input type="text" class="form-control" placeholder="Desired"></td>
+                            <td><input type="text" class="form-control" placeholder="Measured"></td>
+                            <td><input type="text" class="form-control" placeholder="L/R"></td>
+                            <td><select class="form-select">
+                                <option value="" selected="" disabled="">Select Condition</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                                <option value="N/A">N/A</option>
+                            </select></td>
+                        </tr>
+                        <!-- Repeat up to GUY LEVEL 8 -->
+                        <!-- For brevity, only 2 rows are shown; add 6 more rows similarly -->
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <button style="width: 100%;" type="submit" class="btn btn-site" id="submit_button">Submit</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+    <footer class="py-5 position-relative" style="background-color: #000!important;overflow: hidden;">
+    <img src="img/footer-dot.png" style="position: absolute;bottom: 0;left: 0;">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <a href="#"><img src="img/viking.png" style="width: 150px;"></a>
+                    <!-- <ul class="list-unstyled mt-4" style="font-family: 'Raleway';font-size: 14px;">
+                        <li class="mb-2 text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+                    </ul> -->
+                </div>
+
+
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popper and Bootstrap JS -->
+    <!--important for bootstrap 4 slider-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!--header-top-fixed start-->
+    <script>
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 50) {
+                $('.navbar-fixed').addClass('navbar-fixed-top shadow-sm');
+            } else {
+                $('.navbar-fixed').removeClass('navbar-fixed-top shadow-sm');
+            }
+
+        });
+    </script>
+    <!--header-top-fixed End-->
+
+
+
+    <script>
+        // header-top-fixed Start
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 54) {
+                $(".navbar-light").addClass("shadow");
+            } else {
+                $(".navbar-light").removeClass("shadow");
+            }
+        });
+
+        // header-top-fixed End
+    </script>
+    <script>
+        $(window).on("load", function() {
+            $("#status").delay(1000).fadeOut("slow");
+            $("#preloader").delay(1000).fadeOut("slow");
+            $("body").delay(1000).css({
+                overflow: "visible",
+            });
+        });
+    </script>
+    <script src="js/jquery.validate.js"></script>
+
+
+           <script>
+$(".image-box").click(function(event) {
+	var previewImg = $(this).children("img");
+
+	$(this)
+		.siblings()
+		.children("input")
+		.trigger("click");
+
+	$(this)
+		.siblings()
+		.children("input")
+		.change(function() {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				var urll = e.target.result;
+				$(previewImg).attr("src", urll);
+				previewImg.parent().css("background", "transparent");
+				previewImg.show();
+				previewImg.siblings("p").hide();
+			};
+			reader.readAsDataURL(this.files[0]);
+		});
+});
+
+    </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dateInput = document.getElementById("date_of_event");
+
+            // Get today's date and add 1 day to disable today
+            let today = new Date();
+            today.setDate(today.getDate() + 1); // Moves to next day
+
+            // Format the date to YYYY-MM-DD
+            let minDate = today.toISOString().split("T")[0];
+
+            // Set min attribute to disable past dates and today
+            dateInput.setAttribute("min", minDate);
+        });
+    </script>
+
+<script>
+    function addRow() {
+        let table = document.getElementById("deficiencyTable");
+        let newRow = table.insertRow(-1);
+
+        for (let i = 0; i < 4; i++) {
+            let cell = newRow.insertCell(i);
+            let input = document.createElement("input");
+            input.type = "text";
+            input.className = "form-control";
+            cell.appendChild(input);
+        }
+
+        let categoryCell = newRow.insertCell(4);
+        let select = document.createElement("select");
+        select.className = "form-select";
+        select.innerHTML = `
+            <option>Select Category</option>
+            <option value="1">Maintenance issues (Critical)</option>
+            <option value="2">Maintenance issues (Non-Critical)</option>
+            <option value="3">Structural issues (Critical)</option>
+            <option value="4">Structural issues (Non Critical)</option>
+        `;
+        categoryCell.appendChild(select);
+
+        let fileCell = newRow.insertCell(5);
+        let fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.className = "form-control";
+        fileCell.appendChild(fileInput);
+
+        let removeCell = newRow.insertCell(6);
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.className = "remove-row";
+        removeButton.onclick = function() { table.deleteRow(newRow.rowIndex); };
+        removeCell.appendChild(removeButton);
+    }
+
+
+
+    var body = document.querySelector('body');
+var mode = document.querySelector('.mode');
+
+mode.addEventListener('click', function() {
+  body.classList.toggle('dark');
+  mode.classList.toggle('off');
+  mode.classList.add('scaling');
+  setTimeout(function() {
+    mode.classList.remove('scaling');
+  }, 520);
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIA-222-I Maintenance Assessment Form</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #7a7a7a;
+            --primary-hover: #666;
+            --danger-color: #dc3545;
+            --danger-hover: #c82333;
+            --bs-body-bg: #f8f9fa;
+            --bs-body-color: #212529;
+            --bs-border-color: #dee2e6;
+            --card-bg: #fff;
+            --input-bg: #fff;
+            --input-color: #212529;
+            --header-bg: #7a7a7a;
+            --header-color: #fff;
+            --fieldset-border: #ccc;
+            --image-box-border: #ccc;
+        }
+
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #222;
+            --bs-body-color: #f5f5f5;
+            --bs-border-color: #444;
+            --card-bg: #333;
+            --input-bg: #444;
+            --input-color: #f5f5f5;
+            --header-bg: #555;
+            --header-color: #fff;
+            --fieldset-border: #555;
+            --image-box-border: #555;
+        }
+
+        body {
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+            transition: all 0.3s ease;
+        }
+
+        .h2, h2 {
+        font-size: 24px;
+    }
+
+        .card {
+            background-color: var(--card-bg);
+            border-color: var(--bs-border-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-control, .form-select {
+            background-color: var(--input-bg);
+            color: var(--input-color);
+            border-color: var(--bs-border-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: var(--input-bg);
+            color: var(--input-color);
+        }
+
+        .table {
+            color: var(--bs-body-color);
+            border-color: var(--bs-border-color);
+        }
+
+        .table th {
+            background-color: var(--header-bg);
+            color: var(--header-color);
+        }
+
+        .header {
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+            background-color: var(--header-bg);
+            color: var(--header-color);
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        fieldset {
+            border: 1px solid var(--fieldset-border);
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        legend {
+            float: none;
+            width: auto;
+            padding: 0 10px;
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .image-box {
+    border: 2px dashed var(--image-box-border);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3sease;
+    height: 135px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+        .image-box:hover {
+            border-color: var(--primary-color);
+        }
+
+        .image-box img {
+            max-width: 100%;
+            max-height: 150px;
+            display: none;
+        }
+
+        .add-row {
+            background-color: var(--primary-color);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .add-row:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        .remove-row {
+            background-color: var(--danger-color);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .remove-row:hover {
+            background-color: var(--danger-hover);
+            color: white;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="dark"] .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.2rem;
+        }
+
+        .section-banner {
+            background-color: var(--bs-body-bg);
+            padding: 40px 0;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        /* Animation for theme toggle */
+        .scaling {
+            /* transform: scale(1.1); */
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bs-body-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-page {
+            text-align: center;
+        }
+
+        .load-logo {
+            width: 100px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PreLoader -->
+    <div id="preloader">
+        <div id="status" class="loading-page">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-light">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="img/viking.png" alt="Logo" width="200">
+            </a>
+
+
+                        <div class="theme-toggle" id="themeToggle">
+                            <i class="bi bi-sun-fill" id="lightIcon"></i>
+                            <i class="bi bi-moon-fill d-none" id="darkIcon"></i>
+                            <span id="themeText">Light Mode</span>
+                        </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="section-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-title">
+                        TIA-222-I MAINTENANCE AND CONDITION ASSESSMENT REPORT
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="card h-100 shadow">
+                    <img src="img/tower.JPG" class="card-img-top h-100" alt="Tower Image">
+                    <!-- <div class="card-body">
+                        <h5 class="card-title">Tower Information</h5>
+                        <p class="card-text">Complete the form with accurate tower inspection details to generate a comprehensive assessment report.</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Inspection Details</h5>
+                        <form class="row g-3" id="inspectionForm">
+                            <div class="col-md-6">
+                                <label for="inspection_date" class="form-label">
+                                    <i class="bi bi-calendar-date"></i> Inspection Date
+                                </label>
+                                <input type="date" class="form-control" id="inspection_date" name="inspection_date" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="inspector_name" class="form-label">
+                                    <i class="bi bi-person"></i> Inspector Name
+                                </label>
+                                <input type="text" class="form-control" id="inspector_name" name="inspector_name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="inspection_company" class="form-label">
+                                    <i class="bi bi-building"></i> Inspection Company
+                                </label>
+                                <input type="text" class="form-control" id="inspection_company" name="inspection_company" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="client_name" class="form-label">
+                                    <i class="bi bi-people"></i> Client Name
+                                </label>
+                                <input type="text" class="form-control" id="client_name" name="client_name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tower_owner" class="form-label">
+                                    <i class="bi bi-briefcase"></i> Tower Owner
+                                </label>
+                                <input type="text" class="form-control" id="tower_owner" name="tower_owner" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tower_location" class="form-label">
+                                    <i class="bi bi-geo-alt"></i> Tower Location
+                                </label>
+                                <input type="text" class="form-control" id="tower_location" name="tower_location" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tower_id" class="form-label">
+                                    <i class="bi bi-hash"></i> Tower ID/Name
+                                </label>
+                                <input type="text" class="form-control" id="tower_id" name="tower_id" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tower_type" class="form-label">
+                                    <i class="bi bi-broadcast-pin"></i> Tower Type
+                                </label>
+                                <select class="form-select" id="tower_type" name="tower_type" required>
+                                    <option value="">Select Tower Type</option>
+                                    <option value="1">Guyed</option>
+                                    <option value="2">Self-Supporting</option>
+                                    <option value="3">Monopole</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tower_height" class="form-label">
+                                    <i class="bi bi-rulers"></i> Tower Height
+                                </label>
+                                <input type="text" class="form-control" id="tower_height" name="tower_height" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="year_of_construction" class="form-label">
+                                    <i class="bi bi-calendar-check"></i> Year of Construction
+                                </label>
+                                <input type="text" class="form-control" id="year_of_construction" name="year_of_construction" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="tower_photo" class="form-label">
+                                    <i class="bi bi-camera"></i> Photo of Tower
+                                </label>
+                                <input type="file" class="form-control" id="tower_photo" name="tower_photo" required>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2" class="text-center">Structural</th>
+                                                <th colspan="2" class="text-center">Maintenance</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">Critical</th>
+                                                <th class="text-center">Non-Critical</th>
+                                                <th class="text-center">Critical</th>
+                                                <th class="text-center">Non-Critical</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input class="form-control" type="text" placeholder="YES"></td>
+                                                <td><input class="form-control" type="text" placeholder="YES"></td>
+                                                <td><input class="form-control" type="text" placeholder="YES"></td>
+                                                <td><input class="form-control" type="text" placeholder="YES"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="container mb-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Introduction</h2>
+                <p>The above-noted tower was inspected following the general guidelines set forth by the <b>TIA-222-I Annex J: Tower Maintenance and Inspection Procedures</b>. Standard industry and manufacturer specifications were also observed during this assessment. A tower climb was completed by Viking Maintenance personnel and a visual inspection of the installation was performed from this vantage point. It should be noted that most observations are based on a visual inspection conducted during the tower climb. It was not within the scope of this work to physically check or closely observe every member, bolt, connection, or similar component.</p>
+                <p>Both the procedures of the inspection and the preparation of this report were carried out per the requirements of Annex J: Maintenance and Condition Assessment Procedures of the TIA-222-I standard. The standard recommends routine inspections of self-support towers at intervals not exceeding three years, with shorter intervals advised for Class III (Public Safety) Structures or after severe wind, ice storms, or other extreme conditions. Contained herein are the findings and recommendations resulting from the inspection.</p>
+
+                <h3 class="mt-4">Limitations and Exceptions</h3>
+                <p>Subsurface components were not excavated or otherwise assessed during this inspection.</p>
+                <p>The findings and recommendations in this report should not be interpreted as verification of the compliance of the structure, its components, or attachments with any governmental, industry, or other standards.</p>
+                <p>This report does not offer any guarantees, either explicit or implied, regarding the current or future performance, capacity, or structural integrity of the tower or its components.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Non-Compliant Issues Section -->
+    <div class="container mb-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Non-Compliant Maintenance and Structural Issues</h2>
+
+                <fieldset>
+                    <legend><i class="bi bi-exclamation-triangle-fill"></i> Maintenance Issues (Critical)</legend>
+                    <p class="text-muted">Priority items requiring immediate attention</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-eye"></i> Observation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-lightbulb"></i> Recommendation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-image"></i> Upload Image
+                            </label>
+                            <div class="image-box text-center">
+                                <p><i class="bi bi-cloud-arrow-up"></i> Upload image</p>
+                                <img src="/placeholder.svg?height=150&width=200" alt="">
+                            </div>
+                            <input type="file" class="d-none" id="maintenance_critical_image">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="bi bi-exclamation-circle"></i> Maintenance Issues (Non-Critical)</legend>
+                    <p class="text-muted">Items requiring attention in future maintenance</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-eye"></i> Observation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-lightbulb"></i> Recommendation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-image"></i> Upload Image
+                            </label>
+                            <div class="image-box text-center">
+                                <p><i class="bi bi-cloud-arrow-up"></i> Upload image</p>
+                                <img src="/placeholder.svg?height=150&width=200" alt="">
+                            </div>
+                            <input type="file" class="d-none" id="maintenance_noncritical_image">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="bi bi-shield-exclamation"></i> Structural Issues (Critical)</legend>
+                    <p class="text-muted">Structural concerns requiring immediate attention</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-eye"></i> Observation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-lightbulb"></i> Recommendation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-image"></i> Upload Image
+                            </label>
+                            <div class="image-box text-center">
+                                <p><i class="bi bi-cloud-arrow-up"></i> Upload image</p>
+                                <img src="/placeholder.svg?height=150&width=200" alt="">
+                            </div>
+                            <input type="file" class="d-none" id="structural_critical_image">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="bi bi-shield"></i> Structural Issues (Non-Critical)</legend>
+                    <p class="text-muted">Structural items to address in future maintenance</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-eye"></i> Observation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-lightbulb"></i> Recommendation
+                            </label>
+                            <textarea class="form-control" rows="5" placeholder="Enter text to save"></textarea>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-image"></i> Upload Image
+                            </label>
+                            <div class="image-box text-center">
+                                <p><i class="bi bi-cloud-arrow-up"></i> Upload image</p>
+                                <img src="/placeholder.svg?height=150&width=200" alt="">
+                            </div>
+                            <input type="file" class="d-none" id="structural_noncritical_image">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="header mt-4">
+                    <i class="bi bi-tools"></i> Maintenance Issues - Tower (MAINTENANCE)
+                </div>
+                <p class="text-muted">The following issues identified are considered lower priority deviations that do not require immediate attention but should be considered as part of future tower maintenance activities.</p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Category & Item Description</th>
+                                <th>Non-Compliant Item & Recommendation</th>
+                                <th>Photo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>2.2.1 Guy Anchors Vegetation</p>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" rows="4" placeholder="The guy anchor areas are overgrown with vegetation. Recommend vegetation be removed, ground scrubbed, weed barrier applied, and 4&quot;-6&quot; of rock added around the anchors."></textarea>
+                                </td>
+                                <td>
+                                    <input type="file" class="form-control mb-2">
+                                    <input type="file" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>2.2.2 Construction Materials</p>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" rows="4" placeholder="Construction materials are present on a field access path and in the corner of the compound. Recommend materials be removed or consolidated within the compound fencing."></textarea>
+                                </td>
+                                <td>
+                                    <input type="file" class="form-control mb-2">
+                                    <input type="file" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deficiency Schedule Section -->
+    <div class="container mb-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Deficiency Schedule</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="deficiencyTable">
+                        <thead>
+                            <tr>
+                                <th>Deficiency</th>
+                                <th>Elevation (ft)</th>
+                                <th>Location</th>
+                                <th>Notes</th>
+                                <th>Category</th>
+                                <th>Upload Image</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control" value="Missing Locking Devices"></td>
+                                <td><input type="text" class="form-control" value=""></td>
+                                <td><input type="text" class="form-control" value=""></td>
+                                <td><input type="text" class="form-control" value=""></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option>Select Category</option>
+                                        <option value="1">Maintenance issues (Critical)</option>
+                                        <option value="2">Maintenance issues (Non-Critical)</option>
+                                        <option value="3">Structural issues (Critical)</option>
+                                        <option value="4">Structural issues (Non Critical)</option>
+                                    </select>
+                                </td>
+                                <td><input type="file" class="form-control"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" value="Missing Locking Devices"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option>Select Category</option>
+                                        <option value="1">Maintenance issues (Critical)</option>
+                                        <option value="2">Maintenance issues (Non-Critical)</option>
+                                        <option value="3">Structural issues (Critical)</option>
+                                        <option value="4">Structural issues (Non Critical)</option>
+                                    </select>
+                                </td>
+                                <td><input type="file" class="form-control"></td>
+                                <td>
+                                    <button class="btn btn-sm remove-row" onclick="removeRow(this)">
+                                        <i class="bi bi-trash"></i> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn add-row mt-3" onclick="addRow()">
+                    <i class="bi bi-plus-circle"></i> Add Row
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Condition Checklist Section -->
+    <div class="container mb-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">TIA-222-h Annex J Condition Checklist</h2>
+
+                <!-- Section I: Site Conditions -->
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                    <i class="bi bi-geo"></i> I. SITE CONDITIONS (Ground level)
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Inspection Item</th>
+                                <th>Condition</th>
+                                <th>Item Number / Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="3" class="text-start">
+                                    <i class="bi bi-signpost"></i> A. Site Access Road
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>Gate / Lock</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                            <tr>
+                                <td>Aggregate / Weed Barrier</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Settlement / Drainage</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="3" class="text-start">
+                                    <i class="bi bi-building"></i> B. Compound
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>Aggregate / Weed Barrier</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                            <tr>
+                                <td>Settlement / Drainage</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Owner / Client Assets</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Section II: Guyed Anchor Compounds -->
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                    <i class="bi bi-link-45deg"></i> II. GUYED ANCHOR COMPOUNDS
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Inspection Item</th>
+                                <th>Condition</th>
+                                <th>Item Number / Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="3" class="text-start">
+                                    <i class="bi bi-anchor"></i> A. Guy Anchors
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>Aggregate / Weed Barrier</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                            <tr>
+                                <td>Settlement / Drainage</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="" selected disabled>Select Condition</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" value="Item 1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <button type="submit" class="btn btn-submit w-100" id="submit_button">
+                    <i class="bi bi-send"></i> Submit Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <img src="/placeholder.svg?height=80&width=150" alt="Logo" style="width: 150px;">
+                    <p class="mt-3">© 2025 Tower Maintenance Assessment. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Preloader
+        $(window).on("load", function() {
+            $("#status").delay(800).fadeOut("slow");
+            $("#preloader").delay(1000).fadeOut("slow");
+        });
+
+        // Set minimum date for date inputs
+        document.addEventListener("DOMContentLoaded", function() {
+            let dateInputs = document.querySelectorAll('input[type="date"]');
+            let today = new Date().toISOString().split("T")[0];
+
+            dateInputs.forEach(input => {
+                input.setAttribute("min", today);
+            });
+
+            // Initialize theme based on system preference
+            initTheme();
+        });
+
+        // Theme toggle functionality
+        function initTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const lightIcon = document.getElementById('lightIcon');
+            const darkIcon = document.getElementById('darkIcon');
+            const themeText = document.getElementById('themeText');
+
+            // Check for saved theme preference or use system preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const theme = savedTheme || systemTheme;
+
+            // Apply the theme
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            updateThemeUI(theme);
+
+            // Theme toggle click handler
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Add scaling animation
+                themeToggle.classList.add('scaling');
+                setTimeout(() => {
+                    themeToggle.classList.remove('scaling');
+                }, 300);
+
+                updateThemeUI(newTheme);
+            });
+        }
+
+        function updateThemeUI(theme) {
+            const lightIcon = document.getElementById('lightIcon');
+            const darkIcon = document.getElementById('darkIcon');
+            const themeText = document.getElementById('themeText');
+
+            if (theme === 'dark') {
+                lightIcon.classList.add('d-none');
+                darkIcon.classList.remove('d-none');
+                themeText.textContent = 'Dark Mode';
+            } else {
+                lightIcon.classList.remove('d-none');
+                darkIcon.classList.add('d-none');
+                themeText.textContent = 'Light Mode';
+            }
+        }
+
+        // Image upload preview
+        document.querySelectorAll('.image-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const inputId = this.closest('.col-md-4').querySelector('input[type="file"]').id;
+                document.getElementById(inputId).click();
+            });
+        });
+
+        document.querySelectorAll('input[type="file"].d-none').forEach(input => {
+            input.addEventListener('change', function() {
+                const imageBox = this.closest('.col-md-4').querySelector('.image-box');
+                const img = imageBox.querySelector('img');
+                const p = imageBox.querySelector('p');
+
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        img.src = e.target.result;
+                        img.style.display = 'block';
+                        p.style.display = 'none';
+                    };
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+
+        // Add row function for deficiency table
+        function addRow() {
+            const table = document.getElementById('deficiencyTable');
+            const tbody = table.querySelector('tbody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td><input type="text" class="form-control"></td>
+                <td><input type="text" class="form-control"></td>
+                <td><input type="text" class="form-control"></td>
+                <td><input type="text" class="form-control"></td>
+                <td>
+                    <select class="form-select">
+                        <option>Select Category</option>
+                        <option value="1">Maintenance issues (Critical)</option>
+                        <option value="2">Maintenance issues (Non-Critical)</option>
+                        <option value="3">Structural issues (Critical)</option>
+                        <option value="4">Structural issues (Non Critical)</option>
+                    </select>
+                </td>
+                <td><input type="file" class="form-control"></td>
+                <td>
+                    <button class="btn btn-sm remove-row" onclick="removeRow(this)">
+                        <i class="bi bi-trash"></i> Remove
+                    </button>
+                </td>
+            `;
+
+            tbody.appendChild(newRow);
+        }
+
+        // Remove row function
+        function removeRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+        }
+    </script>
+</body>
+</html>
